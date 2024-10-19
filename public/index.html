@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taulant's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap">
+
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <div class="hamburger">
+        <button class="menu-toggle" aria-label="Menu">&#9776;</button> </div>
+        <ul class="nav-links">
+            <li class="list nav-button"><a href="index.html">Home</a></li>
+            <li class="list nav-button">
+                <button class="tech-button special-button">
+                    <a href="projects.html">Projects</a>
+                </button>
+            </li>
+            <li class="list nav-button"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    
+
+        
+    <div class="gradient-bg">
+
+
+    <div class="intro-container">
+        <div class="intro-content">
+          <h1>Hi, I’m Taulant Shala.</h1>
+          <p>
+            I hold a degree in Electronics from the University of Prishtina Hasan Prishtina, and I’m currently pursuing a Master’s in Embedded Computing Systems at RPTU Kaiserslautern-Landau.
+            Alongside my academic journey, I have a deep passion for web development, always eager to learn and build creative solutions. Let’s create something amazing together!
+          </p>
+        </div>
+        <div class="intro-photo">
+          <img src="./photos/myphoto1.png" alt="Taulant Shala Photo">
+        </div>
+      </div>
+
+
+
+      
+
+
+
+        
+        
+          <div class="cool-box">
+            <h2>My Web Development Journey</h2>
+            <p>
+              I am passionate about web development, always eager to build creative and impactful solutions. Whether it's front-end or back-end development, I enjoy solving challenges and learning new technologies.
+            </p>
+         
+            
+            <section id="about" class="about-section">
+          
+                <div class="cards-container">
+                  <div class="card">
+                    <div class="card-front">
+                      <button class="tech-button">Skills</button>
+                    </div>
+                    <div class="card-back">
+                        
+                        <div class="button-container">    
+                            <button class="tech-button">HTML</button>
+                            <button class="tech-button">CSS</button>
+                            <button class="tech-button">JavaScript</button>
+                            <button class="tech-button">JQuery</button>
+                            <button class="tech-button">NodeJS</button>
+                            <button class="tech-button">ExpressJS.</button>
+                        </div>
+                    </div>
+                    
+                 
+                  </div>
+                </div>
+              </section>
+            
+
+            
+
+
+
+
+          
+            <a href="projects.html" class="cta-button">See My Projects</a>
+            
+          </div>
+
+       
+
+          <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/taulant0" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/taulant-shala-5b8131334/" target="_blank">LinkedIn</a>
+                
+                </div>
+                <div class="footer-copy">
+                  &copy; <span id="current-year"></span> Taulant Shala. All rights reserved.
+              </div>
+              
+            </div>
+        </footer>
+        
+    </div>
+
+
+        
+        
+        
+      
+
+          
+
+    
+   
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+    
+    <script>
+        // Mouse move effect for interactive circle
+        const interactive = document.querySelector('.interactive');
+        document.addEventListener('mousemove', (e) => {
+            interactive.style.left = e.pageX + 'px';
+            interactive.style.top = e.pageY + 'px';
+        });
+
+        // Set the current year dynamically
+const currentYearElement = document.getElementById("current-year");
+currentYearElement.textContent = new Date().getFullYear();
+
+document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the active class
+        });
+    });
+
+
+
+    </script>
+</body>
+</html>

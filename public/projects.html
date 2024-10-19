@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taulant's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <div class="hamburger">
+            <button class="menu-toggle" aria-label="Menu">&#9776;</button> </div>
+            <ul class="nav-links">
+                <li class="list nav-button"><a href="index.html">Home</a></li>
+                <li class="list nav-button">
+                    <button class="tech-button special-button">
+                        <a href="projects.html">Projects</a>
+                    </button>
+                </li>
+                <li class="list nav-button"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="projects-container">
+        <div class="projects" id="projects"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/taulant0" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/taulant-shala-5b8131334/"target="_blank">LinkedIn</a>
+            
+            </div>
+            <div class="footer-copy">
+                &copy; <span id="current-year"></span> Taulant Shala. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+         const projectsData = [
+    { name: "A simple CSS meme project", link: "https://taulant0.github.io/css-meme-project/", backgroundImage: "url('./photos/daenerys.jpg')" },
+    { name: "Flag design using CSS", link: "flags.html", backgroundImage: "url('./photos/flag-of-norway.jpg')" },
+    { name: "New York City painting using CSS", link: "https://taulant0.github.io/New-York-City-Painting-by-Piet-Mondrian/", backgroundImage: "url('./photos/Piet_Mondriaan.jpg')" },
+    { name: "A website about owls using Bootstrap", link: "https://taulant0.github.io/Owl-website-using-Bootstrap/", backgroundImage: "url('./photos/owl.jpg')" },
+    { name: "Quote and painting generator using Javascript", link: "https://taulant0.github.io/Paintings-and-Quotes-by-Michelangelo-Buonarroti/", backgroundImage: "url('./photos/Michelangelo-Buonarroti.jpg')" },
+    { name: "Jobs in German language using Javascript", link: "https://taulant0.github.io/Professions-in-German/", backgroundImage: "url('./photos/work.jpg')" },
+    { name: "Simon game using JQuery", link: "https://taulant0.github.io/Simon-Game/", backgroundImage: "url('./photos/simon-game.jpg')" },
+    { name: "A simple website designed in Canva", link: "https://oceanbreezehotel.my.canva.site/original-size-jyjy", backgroundImage: "url('./photos/hotel1.jpg')" }, 
+    { name: "Leap year checker using Javascript", link: "https://taulant0.github.io/leap-year-checker/", backgroundImage: "url('./photos/leap-year.jpg')" },
+    { name: "QR code generation using NodeJs", link: "https://taulant0.github.io/qr-code/", backgroundImage: "url('./photos/code.jpg')" },
+    { name: "The new Seven Wonders using body-parser middleware", link: "https://seven-wonders-xtb1.onrender.com", backgroundImage: "url('./photos/seven-wonders.png')" },
+    { name: "Certificate design using Embedded Javascript", link: "https://certificate-of-award.onrender.com", backgroundImage: "url('./photos/certificate.jpg')" }, 
+      { name: "Dynamic Book Selection Website Using JSON Data", link: "https://ancient-books.onrender.com", backgroundImage: "url('./photos/books.jpg')" },
+    { name: "Movie Discovery Website Using TMDb API", link: "https://movies-api-xc9w.onrender.com", backgroundImage: "url('./photos/movie-api.jpg')" },
+    { name: "Creating an API about watched shows", link: "https://show-bookkeep.onrender.com/", backgroundImage: "url('./photos/movie-photo.jpg')" }, 
+    { name: "Restuaurant website using HTML, CSS, Javascript", link: "https://restaurant-ista.onrender.com/", backgroundImage: "url('./photos/ista.jpg')" },
+    { name: "Car shop website using HTML, CSS, Javascript", link: "https://car-shop-1hzl.onrender.com/", backgroundImage: "url('./photos/car-audi.jpg')"} ,
+    
+];
+
+const projectsContainer = document.querySelector('.projects-container .projects');
+
+projectsData.forEach((project) => {
+    const projectCard = document.createElement('div');
+    projectCard.classList.add('project-card');
+    projectCard.style.backgroundImage = project.backgroundImage;
+
+    const projectTitle = document.createElement('h3');
+    projectTitle.textContent = project.name;
+
+    const projectButton = document.createElement('button');
+    projectButton.textContent = 'View Project';
+    projectButton.onclick = () => {
+        window.location.href = project.link;
+    };
+
+    projectCard.appendChild(projectTitle);
+    projectCard.appendChild(projectButton);
+    projectsContainer.appendChild(projectCard);
+});
+const currentYearElement = document.getElementById("current-year");
+currentYearElement.textContent = new Date().getFullYear();
+
+
+document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the active class
+        });
+    });
+    </script>
+
+
+
+
+
+
+</body>
+</html>

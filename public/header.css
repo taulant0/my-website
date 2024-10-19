@@ -1,0 +1,121 @@
+header {
+    background: linear-gradient(120deg, #0f172a, #1e293b);
+    padding: 20px 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 1s ease;
+}
+
+.logo:hover {
+    color: #00E6B8;
+    transform: scale(1.08);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    transition: max-height 1s ease;
+    overflow: hidden;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 15px;
+    transition: all 1s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-links li a:hover {
+    color: #00E6B8;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        justify-content: end;
+        gap: 10px;
+        width: 100%;
+        max-height: 0;
+        margin-top: 20px;
+        transition: max-height 1.5s ease; 
+        overflow: hidden; 
+    }
+
+    .nav-links.active {
+        max-height: 500px; 
+        display: flex; 
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 5px 10px;
+    }
+
+    .tech-button {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: block; 
+        margin-left: 15px;
+    }
+
+    .hamburger{
+       
+width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+}

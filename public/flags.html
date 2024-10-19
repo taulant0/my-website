@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flags</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <div class="hamburger">
+            <button class="menu-toggle" aria-label="Menu">&#9776;</button> </div>
+            <ul class="nav-links">
+                <li class="list nav-button"><a href="index.html">Home</a></li>
+                <li class="list nav-button">
+                    <button class="tech-button special-button">
+                        <a href="projects.html">Projects</a>
+                    </button>
+                </li>
+                <li class="list nav-button"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="projects-container">
+        <div class="projects" id="projects"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/taulant0" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/taulant-shala-5b8131334/" target="_blank">LinkedIn</a>
+            
+            </div>
+            <div class="footer-copy">
+                &copy; <span id="current-year"></span> Taulant Shala. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+         const projectsData = [
+    { name: "The flag of Bahrain", link: "https://taulant0.github.io/The-flag-of-the-Kingdom-of-Bahrain/", backgroundImage: "url('./photos/bahrain-flag.jpg')" },
+    { name: "The flag of Norway", link:"https://taulant0.github.io/The-flag-of-the-Kingdom-of-Norway/", backgroundImage: "url('./photos/flag-of-norway1.jpg')" },
+    { name: "The flag of Triniad and Tobago", link: "https://taulant0.github.io/The-flag-of-the-Republic-of-Trinidad-and-Tobago/", backgroundImage: "url('./photos/trinidad-tobago-flag.jpg')" },
+    { name: "The flag of Guyana", link: "https://taulant0.github.io/The-flag-of-the-Republic-of-Guyana/", backgroundImage: "url('./photos/guyana-flag.jpg')" }
+   
+];
+
+const projectsContainer = document.querySelector('.projects-container .projects');
+
+projectsData.forEach((project) => {
+    const projectCard = document.createElement('div');
+    projectCard.classList.add('project-card');
+    projectCard.style.backgroundImage = project.backgroundImage;
+
+    const projectTitle = document.createElement('h3');
+    projectTitle.textContent = project.name;
+
+    const projectButton = document.createElement('button');
+    projectButton.textContent = 'View Project';
+    projectButton.onclick = () => {
+        window.location.href = project.link;
+    };
+
+    projectCard.appendChild(projectTitle);
+    projectCard.appendChild(projectButton);
+    projectsContainer.appendChild(projectCard);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the active class
+        });
+    });
+    </script>
+
+
+
+
+
+
+</body>
+</html>
